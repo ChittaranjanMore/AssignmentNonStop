@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Product Update</title>
+    </head>
+    <body>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Shape</td>
+                    <td><input type="text" name ="shape" value="{{data.shape}}"></td>
+                </tr>
+                <tr>
+                    <td>Size</td>
+                    <td><input type="text" name="size" value="{{data.size}}" ></td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td><input type="text" name="location" value="{{data.location}}"></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td><input type="number" name="price" value="{{data.price}}"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Update">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

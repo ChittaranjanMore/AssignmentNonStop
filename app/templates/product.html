@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Product</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><a href="{% url 'add_product'%}">Add</a></td>
+            </tr>
+            <tr>
+                <th>Shape</th>
+                <th>Size</th>
+                <th>Location</th>
+                <th>Price</th>
+            </tr>
+            {% for product_data in page_number.object_list%}
+            <tr>
+                <td>{{product_data.shape}}</td>
+                <td>{{product_data.size}}</td>
+                <td>{{product_data.location}}</td>
+                <td>{{product_data.price}}</td>
+                <td><a href="{% url 'product_update' id=product_data.id%}" value="{{product_data.id}}" >Edit</a></td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <div class="pagination">
+                    {%if page_number.has_previous %} {# whether the previous page exists #}
+                        <a href="?page={{page_number.previous_page_number}}">&laquo;</a>
+                    {% endif %}
+                    <a href="?page={{page_number.number}}">{{page_number.number}}</a>
+                    {%if page_number.has_next %} {# whether the next page exists #}
+                    <a href="?page={{page_number.next_page_number}}">&raquo;</a>
+                    {% endif %}
+                  </div>
+            </tr>
+        </table>
+    </body>
+</html>

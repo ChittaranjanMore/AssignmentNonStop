@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>User Update</title>
+    </head>
+    <body>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name ="name" value="{{data.name}}"></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="text" name="age" value="{{data.age}}" ></td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td><input type="text" name="address" value="{{data.address}}"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Update">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
